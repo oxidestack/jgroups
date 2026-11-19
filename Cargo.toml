@@ -1,0 +1,36 @@
+[package]
+name = "jgroups"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+rust-version = "1.88"
+description = "An unofficial Rust port of JGroups 5.2.28.Final, the Java toolkit for reliable cluster communication"
+repository = "https://github.com/oxidestack/jgroups"
+homepage = "https://oxidestack.github.io/jgroups/"
+documentation = "https://docs.rs/jgroups"
+readme = "README.md"
+keywords = ["jgroups", "cluster", "membership", "gossip", "transport"]
+categories = ["network-programming"]
+# What crates.io gets: the library, its licence and notice, the README and the changelog. The pinned
+# upstream sources, the tests and their recorded vectors, the tools, the docs and the site stay in the
+# repository.
+include = ["/src/**", "/LICENSE", "/NOTICE", "/README.md", "/CHANGELOG.md"]
+
+[package.metadata.port]
+upstream = "JGroups"
+upstream-version = "5.2.28.Final"
+upstream-licence = "Apache-2.0"
+
+[lib]
+name = "jgroups"
+
+[dependencies]
+quick-xml = "0.42.0"
+libc = "0.2"
+regex = "1"
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "net", "sync", "macros", "time", "io-util"] }
+
+[dev-dependencies]
+# `test-util` (paused/advanceable virtual time) so `stack::timer`'s unit tests exercise real
+# millisecond-scale upstream defaults deterministically instead of sleeping in wall-clock time.
+tokio = { version = "1.53.1", features = ["test-util"] }

@@ -1,0 +1,12 @@
+jgroups
+Copyright The jgroups Authors. Licensed under the Apache License, Version 2.0 (LICENSE).
+
+This crate is an unofficial Rust port of JGroups, and is not affiliated with or endorsed by the JGroups project.
+
+JGroups (https://github.com/belaban/JGroups), jgroups-5.2.28.Final, Copyright Bela Ban and the JGroups contributors,
+Apache License, Version 2.0.
+  The protocol stack, the wire formats and the behaviour are ported from the JGroups source, which is pinned verbatim as
+  the git submodule under upstream/ (its LICENSE is upstream/LICENSE). Test cases in tests/ are ported from JGroups's
+  own tests, and the vectors under upstream-tools/ are recorded from a real JGroups.
+
+Test inputs taken from these works remain under their licences.
